@@ -1,7 +1,4 @@
-const quote = document.getElementById("quoteDisplay");
-const quoteBtn = document.getElementById("newQuote");
-
-let randomQ = [
+let quotes = [
   {
     text: "The important thing is not to stop questioning.",
     category: "Science"
@@ -19,6 +16,15 @@ let randomQ = [
     category: "Wisdom"
   }
 ];
-document.addEventListener('click', function showRandomQuote() {
-  
-})
+
+function displayRandomQuote() {
+  const randomQ = Math.floor(Math.random() * quotes.length);
+  const quote = quotes[randomQ];
+
+  const quoteDisplay = document.getElementById('quoteDisplay');
+
+  quoteDisplay.innerHTML = `<p>${quote.text}</p><p>Category : ${quote.category}</p>`;
+
+}
+
+document.getElementById('newQuote').addEventListener('click', displayRandomQuote);
