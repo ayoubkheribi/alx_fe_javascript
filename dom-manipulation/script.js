@@ -30,23 +30,27 @@ function displayRandomQuote() {
 document.getElementById('newQuote').addEventListener('click', displayRandomQuote);
 
 function addQuote() {
+  const formC = document.createElement('div');
 
-  const quoteText = document.getElementById('newQuoteText');
-  const quoteCat = document.getElementById('newQuoteCategory');
+  const newQuoteText = document.createElement('input');
+  newQuoteText.id = "newQuoteText";
+  newQuoteText.placeholder = "Enter a new quote";
 
-  const createAddQuoteForm = {
-    text: quoteText.value.trim(),
-    category: quoteCat.value.trim()
-  };
-  if (quoteText && quoteCat) {
-    quotes.push(createAddQuoteForm);
-    alert('new quote added');
-    textInput.value = '';
-    categoryInput.value = '';
-  }
-  else{
-    alert("enter a quote")
-  }
+  const newQuoteCategory = document.createElement('input');
+  newQuoteCategory.id = "newQuoteCategory";
+  newQuoteCategory.placeholder = "Enter quote category";
+
+  const buttun = document.createElement('button');
+  buttun.textContent = "Add Quote";
+
+  
+
+
+  formC.appendChild(newQuoteText);
+  formC.appendChild(newQuoteCategory);
+
+
+  document.body.appendChild(formC);
 
 }
 
