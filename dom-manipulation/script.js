@@ -28,3 +28,26 @@ function displayRandomQuote() {
 }
 
 document.getElementById('newQuote').addEventListener('click', displayRandomQuote);
+
+function addQuote() {
+
+  const quoteText = document.getElementById('newQuoteText');
+  const quoteCat = document.getElementById('newQuoteCategory');
+
+  const newQuote = {
+    text: quoteText.value.trim(),
+    category: quoteCat.value.trim()
+  };
+  if (quoteText && quoteCat) {
+    quotes.push(newQuote);
+    alert('new quote added');
+    textInput.value = '';
+    categoryInput.value = '';
+  }
+  else{
+    alert("enter a quote")
+  }
+
+}
+
+
