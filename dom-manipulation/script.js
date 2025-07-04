@@ -34,12 +34,12 @@ function addQuote() {
   const quoteText = document.getElementById('newQuoteText');
   const quoteCat = document.getElementById('newQuoteCategory');
 
-  const newQuote = {
+  const createAddQuoteForm = {
     text: quoteText.value.trim(),
     category: quoteCat.value.trim()
   };
   if (quoteText && quoteCat) {
-    quotes.push(newQuote);
+    quotes.push(createAddQuoteForm);
     alert('new quote added');
     textInput.value = '';
     categoryInput.value = '';
